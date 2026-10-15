@@ -1,53 +1,64 @@
-const STORAGE_KEY = "shiyi-progress-v1";
+const STORAGE_KEY = "shiyi-sanxingdui-v1";
+
+const IMAGE_BASE = "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=";
+
+const IMAGES = {
+  figure: IMAGE_BASE + "ancient%20Chinese%20bronze%20standing%20figure%20statue%20with%20tall%20crown%20and%20layered%20robe%2C%20hands%20held%20together%20in%20circle%20at%20chest%2C%20Sanxingdui%20style%2C%20full%20body%2C%20dark%20museum%20spotlight%2C%20bronze%20green%20patina%2C%20black%20background%2C%20cinematic%2C%20high%20detail&image_size=landscape_4_3",
+  tree: IMAGE_BASE + "ancient%20bronze%20sacred%20tree%20sculpture%20with%20birds%20perched%20on%20branches%20and%20a%20dragon%20descending%20along%20the%20trunk%2C%20Sanxingdui%20style%2C%20dark%20museum%20display%2C%20spotlight%2C%20bronze%20green%20patina%2C%20black%20background%2C%20mysterious%20cinematic%2C%20high%20detail&image_size=landscape_4_3",
+  eyemask: IMAGE_BASE + "ancient%20Chinese%20bronze%20mask%20with%20protruding%20cylindrical%20eyes%20and%20large%20spreading%20ears%2C%20Sanxingdui%20style%2C%20dark%20museum%20display%2C%20spotlight%2C%20bronze%20green%20patina%2C%20black%20background%2C%20mysterious%2C%20high%20detail&image_size=landscape_4_3",
+  goldmask: IMAGE_BASE + "ancient%20broken%20gold%20mask%20artifact%2C%20half%20of%20a%20golden%20mask%20with%20hollow%20eyes%2C%20Sanxingdui%20style%2C%20dark%20museum%20display%2C%20dramatic%20spotlight%2C%20black%20background%2C%20metallic%20shine%2C%20high%20detail&image_size=landscape_4_3",
+  staff: IMAGE_BASE + "ancient%20Chinese%20gold%20scepter%20staff%20with%20engraved%20fish%20bird%20arrow%20and%20human%20head%20patterns%2C%20Sanxingdui%20artifact%2C%20dark%20museum%20display%2C%20spotlight%2C%20black%20background%2C%20metallic%20gold%20shine%2C%20high%20detail&image_size=landscape_4_3",
+  sunwheel: IMAGE_BASE + "ancient%20bronze%20circular%20sun%20wheel%20artifact%20with%20five%20radiating%20rays%20connected%20to%20outer%20ring%2C%20Sanxingdui%20style%2C%20dark%20museum%20display%2C%20spotlight%2C%20bronze%20green%20patina%2C%20black%20background%2C%20high%20detail&image_size=landscape_4_3"
+};
 
 const FRAGMENTS = [
   {
-    id: "photo",
-    type: "照片档案",
-    title: "听雨茶社门脸",
-    summary: "巷口西侧的木牌与两扇昏黄窗纸。",
-    body: "拍摄说明（演示）：画面中可见“听雨茶社”直书牌匾、湿润石板与挂起的灯笼。影像用于课程场景氛围，不对应真实门牌。",
-    visual: "photo"
+    id: "figure",
+    type: "青铜造像",
+    title: "青铜大立人像",
+    summary: "通高 260.8 厘米，被誉为“世界铜像之王”。",
+    body: "1986 年出土于三星堆二号祭祀坑。人像高 172 厘米，头戴高冠，身着三层长衣，赤足立于方台之上，双手环握于胸前，是现存最高、最完整的青铜立人像之一。多数学者推测其身份可能是集神权与王权于一身的大祭司或蜀王；其双手原持何物（象牙、法器或礼器等），学界尚无定论。",
+    clue: "线索：环握的双手一定曾持有某物——它握住的或许是沟通天地的法器，也或许是一段至今未被破译的仪式。"
   },
   {
-    id: "letter",
-    type: "信件抄件",
-    title: "掌柜家书残页",
-    summary: "林向晚写给远行妹妹的一纸短笺。",
-    body: "“巷里的雨还是老样子。铜壶能用，竹椅缺了一角，客人仍会坐到天黑。店不大，可它让我把一天过完整。”（演示抄件）",
-    visual: "letter"
+    id: "tree",
+    type: "青铜重器",
+    title: "青铜神树",
+    summary: "修复后通高 396 厘米，是迄今所见最大的单件青铜文物之一。",
+    body: "1986 年出土于二号祭祀坑。一号神树残高 359 厘米，修复后通高 396 厘米。树分三层，每层三枝，枝头立有神鸟，残存九只；树侧有一龙缘树而下。学界常将其与《山海经》中的“扶木”“若木”等神树传说相联系，认为它可能反映了古蜀人的太阳崇拜与沟通天地的观念——此为学术推测，尚无定论。",
+    clue: "线索：九鸟栖于枝头，一龙自天而降——树，或许是古蜀人心中连接天地的阶梯。"
   },
   {
-    id: "oral",
-    type: "口述记录",
-    title: "巷口居民访谈",
-    summary: "一位自称在此住了四十年的邻居。",
-    body: "口述整理（演示）：“那店不是名胜。它只是下雨天有地方坐。后来牌子摘了，大家仍习惯把那一段叫听雨。”",
-    visual: "oral"
+    id: "eyemask",
+    type: "青铜面具",
+    title: "青铜纵目面具",
+    summary: "宽 138 厘米，双眼呈柱状外凸约 16 厘米，人称“千里眼、顺风耳”。",
+    body: "1986 年出土于二号祭祀坑。面具宽约 138 厘米、高约 66 厘米，眼球呈柱状向前凸出约 16 厘米，双耳向两侧充分展开。有学者将其与《华阳国志》中蜀王蚕丛“其目纵”的记载相联系，推测它可能是古蜀人心目中始祖或祖先神的形象；也有观点认为它象征超凡的视听能力。以上均属学术推测。",
+    clue: "线索：凸出的双目究竟望向何处？也许它看的不是远方，而是古蜀人想象力的边界。"
   },
   {
-    id: "news",
-    type: "报刊剪报",
-    title: "青岚巷改造通告",
-    summary: "地方小报边栏中的一则短讯。",
-    body: "演示剪报：本市将对青岚巷部分铺面进行整饬。17 号原茶社停业已久，拟改为便民空间。原文、版面与日期均为虚构。",
-    visual: "news"
+    id: "goldmask",
+    type: "黄金器",
+    title: "金面具",
+    summary: "2021 年出土于五号坑的半张黄金面具，重约 280 克。",
+    body: "2021 年出土于五号祭祀坑，出土时仅剩半张。残存部分宽约 23 厘米、高约 28 厘米，重约 280 克；考古人员推测完整面具总重可能超过 500 克，体量在国内同期黄金面具中罕见。它与三星堆此前出土的金面罩、金杖一起，构成了古蜀独特而成熟的黄金工艺传统。",
+    clue: "线索：半张面具静静躺在坑中——另一半去了哪里？在古蜀，黄金或许是神的面庞。"
   },
   {
-    id: "ticket",
-    type: "票据残片",
-    title: "午后茶票",
-    summary: "盖着模糊朱印的消费凭证。",
-    body: "演示票据：听雨茶社 / 绿茶一壶 / 座位近窗 / 金额未详。纸边焦黄，左下角缺角。",
-    visual: "ticket"
+    id: "staff",
+    type: "黄金器",
+    title: "金杖",
+    summary: "长约 142 厘米的金皮木杖，錾刻鱼、鸟、箭与人头像图案。",
+    body: "1986 年出土于一号祭祀坑。金杖以金条捶打成金皮后包卷在木杖上制成，木芯早已炭化。杖身錾刻着由鱼、鸟、箭矢与人头像组成的图案。中原王朝多以鼎象征权力，而三星堆以杖为尊——多数学者推测金杖可能是王权或神权的象征物，其图案的确切含义至今未有定论。",
+    clue: "线索：鱼、鸟、箭串联成一行“图像的文字”——在没有成熟文字的古蜀，权杖本身就是宣言。"
   },
   {
-    id: "sound",
-    type: "声音纪要",
-    title: "雨落青岚",
-    summary: "一段据称录于檐下的环境声。",
-    body: "录音纪要（演示）：可听见屋檐滴水、远处车轮与极轻的杯盏碰撞。此条以文字与波形示意，无真实音频文件。",
-    visual: "sound"
+    id: "sunwheel",
+    type: "青铜器",
+    title: "青铜太阳形器",
+    summary: "直径约 85 厘米，中心凸起，五道“光芒”呈放射状分布。",
+    body: "1986 年出土于二号祭祀坑。器物呈圆形，直径约 85 厘米，中央半球状凸起，五道芒条与外圈相连。其用途众说纷纭：太阳崇拜的礼器、车轮、盾牌或装饰构件等说法并存，学界尚无定论。三星堆器物上反复出现的太阳与眼睛元素，暗示“观天”在古蜀信仰中可能占有重要位置（推测）。",
+    clue: "线索：五道光芒钉住一轮太阳——古蜀人把它铸进青铜，是想让光明永不落下吗？"
   }
 ];
 
@@ -67,7 +78,11 @@ function loadProgress() {
 }
 
 function saveProgress() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.collected]));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.collected]));
+  } catch (err) {
+    /* 隐私模式等场景下无法写入时，仅本次会话内保留进度 */
+  }
 }
 
 function showToast(text) {
@@ -114,7 +129,7 @@ function renderArchive() {
     card.className = `archive-card${collected ? "" : " locked"}`;
     card.innerHTML = collected
       ? `<span class="open-badge">已入藏</span><h3>${item.title}</h3><p>${item.summary}</p><p>${item.type}</p>`
-      : `<span class="lock-badge">未收集 · 锁定</span><h3>${item.title}</h3><p>请回到青岚巷场景中寻找对应热点。</p>`;
+      : `<span class="lock-badge">待发掘 · 锁定</span><h3>${item.title}</h3><p>请回到遗址现场寻找对应热点。</p>`;
     if (collected) {
       card.addEventListener("click", () => openFragment(item.id, false));
     }
@@ -133,24 +148,7 @@ function renderStory() {
 }
 
 function visualMarkup(item) {
-  if (item.visual === "letter") {
-    return `<div class="modal-visual letter">妹妹如晤：巷雨未停，铜壶仍热。店虽小，我把它当作一件还没做完的小事。——林向晚（演示）</div>`;
-  }
-  if (item.visual === "news") {
-    return `<div class="modal-visual news"><strong>地方新闻 · 演示版面</strong><br/>青岚巷整饬在即，17号旧茶社或改作便民空间。本报讯，日期从缺。</div>`;
-  }
-  if (item.visual === "ticket") {
-    return `<div class="modal-visual ticket">听雨茶社 茶票<br/>绿茶一壶 · 近窗<br/>朱印：听雨（演示）</div>`;
-  }
-  if (item.visual === "sound") {
-    const bars = Array.from({ length: 18 }, (_, i) => `<span class="wave" style="animation-delay:${i * 0.08}s;height:${20 + (i % 5) * 10}px"></span>`).join("");
-    return `<div class="modal-visual sound">${bars}</div>`;
-  }
-  const photos = {
-    photo: "https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=1200&q=80",
-    oral: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80"
-  };
-  return `<div class="modal-visual" style="background-image:url('${photos[item.visual] || photos.photo}')"></div>`;
+  return `<div class="modal-visual" style="background-image:url('${IMAGES[item.id]}')"><span class="visual-note">AI 氛围示意 · 非文物实拍</span></div>`;
 }
 
 function openFragment(id, canCollect) {
@@ -160,7 +158,7 @@ function openFragment(id, canCollect) {
   document.getElementById("modalType").textContent = item.type;
   document.getElementById("modalTitle").textContent = item.title;
   document.getElementById("modalVisual").outerHTML = `<div id="modalVisual">${visualMarkup(item)}</div>`;
-  document.getElementById("modalBody").textContent = item.body;
+  document.getElementById("modalBody").innerHTML = `<p>${item.body}</p><p class="clue-line">${item.clue}</p>`;
   const collectBtn = document.getElementById("collectBtn");
   const already = state.collected.has(id);
   collectBtn.hidden = !canCollect && already;
@@ -181,10 +179,10 @@ function collectCurrent() {
   updateProgress();
   closeModal();
   if (state.collected.size === FRAGMENTS.length) {
-    showToast("关键碎片已齐。完整故事已解锁。");
+    showToast("六件文物档案已齐，古蜀文明故事已解锁。");
     setView("story");
   } else {
-    showToast("碎片已收入档案馆。");
+    showToast("文物档案已收录。");
   }
 }
 

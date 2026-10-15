@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>拾遗 · 数字历史探索</title>
-  <meta name="description" content="《拾遗》是一款面向历史文化爱好者的沉浸式数字文化探索产品。演示内容，课程作业 MVP。" />
+  <title>拾遗·三星堆——古蜀文明沉浸式探索</title>
+  <meta name="description" content="《拾遗·三星堆》以四川广汉三星堆遗址为背景，把展板式阅读改造成进入遗址、寻找线索、收集文物档案、解锁古蜀文明故事的沉浸式探索体验。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -19,22 +19,22 @@
     <button class="brand" data-nav="home" type="button" aria-label="返回首页">
       <span class="brand-mark">遺</span>
       <span class="brand-text">
-        <strong>拾遗</strong>
-        <small>数字历史探索</small>
+        <strong>拾遗·三星堆</strong>
+        <small>古蜀文明沉浸式探索</small>
       </span>
     </button>
 
     <nav class="nav" aria-label="主导航">
       <button type="button" data-nav="home">首页</button>
-      <button type="button" data-nav="explore">场景探索</button>
-      <button type="button" data-nav="archive">档案馆</button>
-      <button type="button" data-nav="story">故事</button>
+      <button type="button" data-nav="explore">遗址探索</button>
+      <button type="button" data-nav="archive">文物档案馆</button>
+      <button type="button" data-nav="story">古蜀故事</button>
       <button type="button" data-nav="restore">场景复原</button>
     </nav>
 
     <div class="progress-chip" aria-live="polite">
       <span class="progress-label">探索进度</span>
-      <div class="progress-bar" aria-hidden="true">
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="探索进度">
         <span class="progress-fill" id="progressFill"></span>
       </div>
       <span class="progress-count" id="progressCount">0/6</span>
@@ -47,128 +47,125 @@
         <div class="home-bg"></div>
         <div class="home-vignette"></div>
         <div class="home-copy">
-          <p class="eyebrow">课程作业 · 演示内容 · 数字博物馆体验</p>
-          <h1>拾遗</h1>
-          <p class="home-lead">在青岚巷的数字现场中寻找照片、信件与声音碎片，把散落的记忆重新拼成一段完整的历史故事。</p>
-          <p class="home-sub">这不是展板式阅读。你需要走入场景、点开线索、建立档案，才能看见被时间覆盖的那一层。</p>
+          <p class="eyebrow">数字博物馆 · 沉浸式考古探索</p>
+          <h1>拾遗·三星堆</h1>
+          <p class="home-lead">穿越三千年，探寻古蜀文明的回响。</p>
+          <p class="home-sub">这不是展板式阅读。你需要走进探方、点开线索、建立文物档案，才能看见被三千年黄土覆盖的古蜀。</p>
           <div class="home-actions">
-            <button class="btn btn-gold" type="button" data-nav="explore">开始探索</button>
-            <button class="btn btn-ghost" type="button" data-nav="archive">进入档案馆</button>
+            <button class="btn btn-gold" type="button" data-nav="explore">进入遗址</button>
+            <button class="btn btn-ghost" type="button" data-nav="archive">文物档案馆</button>
           </div>
           <dl class="home-meta">
             <div>
-              <dt>场景</dt>
-              <dd>青岚巷 · 演示街区</dd>
+              <dt>遗址</dt>
+              <dd>四川广汉 · 三星堆</dd>
             </div>
             <div>
-              <dt>碎片</dt>
-              <dd>6 件关键档案</dd>
+              <dt>线索</dt>
+              <dd>6 件代表文物</dd>
             </div>
             <div>
               <dt>体验</dt>
-              <dd>收集 · 阅读 · 复原</dd>
+              <dd>探索 · 收集 · 复原</dd>
             </div>
           </dl>
         </div>
         <aside class="home-card">
-          <p class="stamp">DEMO</p>
-          <h2>本次探索命题</h2>
-          <h3>一座茶馆消失之前</h3>
-          <p>1950 至 2020 年间，青岚巷 17 号的“听雨茶社”经历了开张、停业、改造与遗忘。所有人物、地点与档案均为课程演示内容，并非真实史料。</p>
+          <p class="eyebrow">本次探索命题</p>
+          <h3>沉睡数千年，一醒惊天下</h3>
+          <p>三星堆遗址位于四川广汉鸭子河畔，延续时间距今约 4500—2900 年。1986 年两座祭祀坑的发现震惊世界；2019 年起的新一轮发掘，又揭开了六座祭祀坑的面纱。青铜神树、纵目面具与金杖背后，是一个与中原商文明大体同期、却独具神秘气质的古蜀王国。</p>
           <ul>
-            <li>在街景中寻找 6 处热点</li>
-            <li>将碎片收入个人档案馆</li>
-            <li>解锁完整故事与场景复原</li>
+            <li>在遗址现场寻找 6 处探索热点</li>
+            <li>将文物档案收入个人档案馆</li>
+            <li>解锁古蜀文明故事与场景复原</li>
           </ul>
+          <p class="card-note">文物信息依据三星堆博物馆等公开资料整理，学术推测均已标注；图像为 AI 氛围示意。</p>
         </aside>
       </div>
     </section>
 
-    <section class="view view-explore" id="view-explore" aria-label="场景探索">
+    <section class="view view-explore" id="view-explore" aria-label="遗址探索">
       <div class="explore-head">
         <div>
-          <p class="eyebrow">沉浸现场 · 青岚巷数字沙盘</p>
-          <h2>走进尚未被说完的巷子</h2>
+          <p class="eyebrow">沉浸现场 · 三星堆遗址数字沙盘</p>
+          <h2>走进尚未被说完的遗址</h2>
         </div>
-        <p class="explore-hint">点击巷中光点，阅读历史碎片。已收集的热点会转为古铜色。</p>
+        <p class="explore-hint">点击现场光点，研读文物线索。已收集的热点会转为青铜色。</p>
       </div>
 
-      <div class="scene" id="scene" role="application" aria-label="青岚巷探索场景">
+      <div class="scene" id="scene" role="application" aria-label="三星堆遗址探索场景">
         <div class="scene-sky"></div>
-        <div class="scene-fog"></div>
-        <div class="lantern l1"></div>
-        <div class="lantern l2"></div>
-        <div class="lantern l3"></div>
-
-        <div class="building left-roof"></div>
-        <div class="building shop">
-          <span class="sign">听雨茶社</span>
-          <span class="window w1"></span>
-          <span class="window w2"></span>
-        </div>
-        <div class="building alley-wall"></div>
-        <div class="building right-house">
-          <span class="sign small">17号</span>
-        </div>
+        <div class="scene-moon"></div>
+        <div class="mound"></div>
+        <div class="tree"></div>
+        <span class="orb o1"></span>
+        <span class="orb o2"></span>
+        <span class="orb o3"></span>
         <div class="ground"></div>
-        <div class="wet-glow"></div>
+        <div class="pit pit-a"><span class="pit-tag">祭祀坑 · 示意</span></div>
+        <div class="pit pit-b"><span class="pit-tag">祭祀坑 · 示意</span></div>
+        <div class="dig-light l1"></div>
+        <div class="dig-light l2"></div>
+        <div class="dig-light l3"></div>
+        <div class="scene-fog"></div>
 
-        <button class="hotspot" type="button" data-fragment="photo" style="left:18%; top:46%">
+        <button class="hotspot" type="button" data-fragment="figure" style="left:18%; top:50%">
           <span class="pulse"></span>
-          <span class="hotspot-label">门脸照片</span>
+          <span class="hotspot-label">青铜大立人像</span>
         </button>
-        <button class="hotspot" type="button" data-fragment="letter" style="left:38%; top:58%">
+        <button class="hotspot" type="button" data-fragment="tree" style="left:50%; top:26%">
           <span class="pulse"></span>
-          <span class="hotspot-label">掌柜家书</span>
+          <span class="hotspot-label">青铜神树</span>
         </button>
-        <button class="hotspot" type="button" data-fragment="oral" style="left:52%; top:36%">
+        <button class="hotspot" type="button" data-fragment="eyemask" style="left:36%; top:66%">
           <span class="pulse"></span>
-          <span class="hotspot-label">巷口口述</span>
+          <span class="hotspot-label">青铜纵目面具</span>
         </button>
-        <button class="hotspot" type="button" data-fragment="news" style="left:67%; top:52%">
+        <button class="hotspot" type="button" data-fragment="goldmask" style="left:66%; top:48%">
           <span class="pulse"></span>
-          <span class="hotspot-label">旧报剪报</span>
+          <span class="hotspot-label">金面具</span>
         </button>
-        <button class="hotspot" type="button" data-fragment="ticket" style="left:79%; top:64%">
+        <button class="hotspot" type="button" data-fragment="staff" style="left:58%; top:74%">
           <span class="pulse"></span>
-          <span class="hotspot-label">茶票残片</span>
+          <span class="hotspot-label">金杖</span>
         </button>
-        <button class="hotspot" type="button" data-fragment="sound" style="left:28%; top:72%">
+        <button class="hotspot" type="button" data-fragment="sunwheel" style="left:82%; top:34%">
           <span class="pulse"></span>
-          <span class="hotspot-label">雨巷录音</span>
+          <span class="hotspot-label">青铜太阳形器</span>
         </button>
       </div>
+      <p class="scene-note">场景为氛围示意，并非遗址实地测绘。</p>
     </section>
 
-    <section class="view view-archive" id="view-archive" aria-label="历史档案馆">
+    <section class="view view-archive" id="view-archive" aria-label="文物档案馆">
       <div class="page-head">
         <div>
           <p class="eyebrow">个人档案柜</p>
-          <h2>历史档案馆</h2>
-          <p>已收集的碎片可以反复阅读。未收集的条目保持锁定，需回到场景中寻找。</p>
+          <h2>文物档案馆</h2>
+          <p>已收集的文物档案可以反复研读。未收集的条目保持锁定，需回到遗址现场寻找。</p>
         </div>
         <button class="btn btn-ghost" type="button" id="resetProgress">重置探索进度</button>
       </div>
       <div class="archive-grid" id="archiveGrid"></div>
     </section>
 
-    <section class="view view-story" id="view-story" aria-label="故事解锁">
+    <section class="view view-story" id="view-story" aria-label="古蜀文明故事">
       <div class="story-wrap">
         <div class="story-locked" id="storyLocked">
           <p class="eyebrow">尚未解锁</p>
-          <h2>完整故事仍藏在碎片之后</h2>
-          <p>请先收集全部 6 件关键碎片。档案馆会同步显示你的缺口。</p>
+          <h2>古蜀的故事仍封存在黄土之下</h2>
+          <p>请先收集全部 6 件文物档案。档案馆会同步显示你的缺口。</p>
           <div class="missing-list" id="missingList"></div>
           <button class="btn btn-gold" type="button" data-nav="explore">继续探索</button>
         </div>
         <article class="story-open" id="storyOpen" hidden>
-          <p class="eyebrow">已解锁 · 演示叙事</p>
-          <h2>听雨茶社：一座店面如何变成记忆</h2>
-          <p class="story-kicker">以下文字为课程作业演示故事，人物、地址与引文均为虚构样例。</p>
+          <p class="eyebrow">已解锁 · 古蜀文明章节</p>
+          <h2>古蜀回声：三星堆告诉了我们什么</h2>
+          <p class="story-kicker">本章依据三星堆博物馆及权威媒体公开资料整理；凡属学术推测，均已标注，不构成学术结论。</p>
           <div class="story-body">
-            <p>青岚巷并不宽。雨天时，屋檐把两家门脸连成一条窄而亮的水路。17 号曾经挂着一块并不精致的木牌：听雨茶社。店里没有名人题字，只有一把总是缺了一角的竹椅，以及掌柜林向晚每晚都会擦拭的铜壶。</p>
-            <p>家书里，他把茶社写成“一件还没做完的小事”。报纸上，它先是市井新闻里的配角，后来变成改造通告里的门牌号。茶票残片证明过这里曾被人认真对待：三钱茶叶、一壶水、半个下午。巷口的口述则提醒我们，历史往往不是被摧毁的，而是在人们“以后再说”的时候慢慢走远。</p>
-            <p>当最后一段雨声被重新听见，17 号的轮廓才重新变得清楚——不是为了把旧街原样搬回来，而是让后来者知道：这里曾经有人坐过、写过、等待过。</p>
+            <p>1929 年，广汉农民燕道诚在月亮湾淘沟时发现一坑玉石器，三星堆第一次向世人露出缝隙。此后数十年，考古工作者在鸭子河畔陆续发现城墙、房址与墓葬。1986 年，一号、二号两座祭祀坑破土而出，青铜大立人像、青铜神树、纵目面具与金杖成批现身——“沉睡数千年，一醒惊天下”。2019 年起，三至八号坑的新一轮发掘再次震动世界：上万件编号文物中，黄金面具残片、顶尊跪坐人像等前所未见的器物接连出土。</p>
+            <p>这些文物拼合出的，是一个与中原商文明大体同期、却风格迥异的古蜀王国：成熟的青铜铸造与独特的黄金工艺，规模可观的城址，以及可能带有浓厚神权色彩的统治体系。神树、太阳形器与大量眼形装饰，暗示着太阳与“观天”在古蜀信仰中的分量；成坑埋藏的象牙与海贝，则提示这个内陆王国或许存在远距离的对外交流（学界推测）。《华阳国志》记蜀王蚕丛“其目纵”，有学者将纵目面具与之相联系——这是文献与文物互证的一种尝试，而非定论。</p>
+            <p>谜题仍未解开：三星堆迄今未发现成熟的文字系统；祭祀坑为何集中埋藏、器物为何在入坑前被损毁焚烧，学界尚无共识；这个王国后来的去向，较普遍的观点认为可能在成都金沙遗址得到延续。古蜀的完整面貌，仍在田野与实验室中等待补全——而每一件被重新拾起的遗珍，都是通向三千年前的一级台阶。</p>
           </div>
           <button class="btn btn-gold" type="button" data-nav="restore">观看场景复原</button>
         </article>
@@ -180,19 +177,19 @@
         <div>
           <p class="eyebrow">过去与现在</p>
           <h2>场景复原对照</h2>
-          <p>拖动中间的分隔线，对照演示中的历史街景与当代街景。图像为氛围示意，非实地测绘。</p>
+          <p>拖动中间的分隔线，对照考古遗址现状与推测性古代场景。图像均为氛围示意：左侧为基于文物的想象复原，并非已证实的历史原貌。</p>
         </div>
       </div>
       <div class="compare" id="compare">
         <div class="compare-past">
-          <div class="compare-caption">过去 · 演示复原</div>
+          <div class="compare-caption">推测性古代场景 · 想象复原</div>
         </div>
         <div class="compare-now" id="compareNow">
-          <div class="compare-caption">现在 · 演示对照</div>
+          <div class="compare-caption">考古遗址现状 · 氛围示意</div>
         </div>
-        <div class="compare-handle" id="compareHandle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="拖动对比历史与现在" tabindex="0"></div>
+        <div class="compare-handle" id="compareHandle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="拖动对比推测场景与遗址现状" tabindex="0"></div>
       </div>
-      <p class="compare-note">提示：在手机上按住分隔线左右滑动即可。</p>
+      <p class="compare-note">提示：在手机上按住分隔线左右滑动即可。推测性复原不等于已证实的历史原貌。</p>
     </section>
   </main>
 
@@ -202,7 +199,7 @@
       <button class="icon-close" type="button" data-close-modal aria-label="关闭">×</button>
       <p class="eyebrow" id="modalType"></p>
       <h2 id="modalTitle"></h2>
-      <p class="demo-flag">演示内容 · 非真实史料</p>
+      <p class="info-flag">资料依据公开考古信息整理 · 推测已标注 · 图像为 AI 氛围示意</p>
       <div class="modal-visual" id="modalVisual"></div>
       <div class="modal-body" id="modalBody"></div>
       <div class="modal-actions">
@@ -215,7 +212,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <footer class="site-footer">
-    <p>《拾遗》课程作业 MVP · 全部档案、人物与地点均为演示内容 · 进度保存在本机浏览器</p>
+    <p>《拾遗·三星堆》古蜀文明沉浸式探索 · 文物信息依据公开考古资料整理，推测与想象内容均已标注 · 图像为 AI 氛围示意 · 探索进度保存在本机浏览器</p>
   </footer>
 
   <script src="script.js"></script>
